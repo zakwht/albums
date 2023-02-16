@@ -2,79 +2,43 @@
 <html>
   <head>
     <title>Albums</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-      img {
-        width: 100%;
-      }
-      .flex {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      }
-      body {
-        margin: 0;
-        height: 100%;
-        overflow: scroll;
-      }
       html {
-        overflow: hidden;
-        height: 100%;
-        user-select: none;
+        background-color: #33363f;
       }
-      .item {
-        display: grid;
-        position: relative;
-        overflow: hidden;
-      }
-      a {
-        position: absolute;
-        width: -webkit-fill-available;
-        height: -webkit-fill-available;
-        text-align: center;
-        margin: auto;
+      main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 10%;
-        display: none;
-        text-decoration: none;
+        align-items: center;
+        height: 100%;
       }
-      a * {
-        display: block;
+      input {
+        font-size: 32px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        padding: 8px 16px;
+        margin-bottom: 16px;
+      }
+      span {
         color: white;
-      }
-      div.item:hover a {
-        display: flex;
-        background: rgba(0,0,0,0.4);
-        backdrop-filter: blur(4px);
+        font-size: 24px;
       }
     </style>
   </head>
   <body>
     <main id="main">
-      <div class="grid">
-        <% albums.forEach(album => { %>
-          <div class="item">
-            <img 
-              src="<%= album.image %>" 
-              alt="<%= album.name %>" 
-              draggable="false"
-              data-name="<%= album.name %>" 
-              data-artist="<%= album.artist %>"
-              data-date="<%= album.release_date %>"
-            />
-            <a draggable="false" href="spotify:album:<%= album.id %>">
-              <span><%= album.name %></span>
-              <span><%= album.artist %></span>
-              <time><%= album.release_date.slice(0,4) %></time>
-            </a>
-          </div>
-        <% }) %>
-        </div>
+      <input id="input" onkeydown="handleKeyDown(event)" />
+      <span><%= error %></span>
     </main>
   </body>
+  <script>
+    const handleKeyDown = e => {
+      if (e.key !== "Enter" || !e.currentTarget.value) return;
+      const match = encodeURIComponent(e.currentTarget.value);
+      window.open(`/get-playlists?match=${match}`, "_self");
+    }
+  </script>
 </html>

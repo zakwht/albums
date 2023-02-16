@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Albums</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      img {
+        width: 100%;
+      }
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+      .item {
+        display: grid;
+        position: relative;
+        overflow: hidden;
+      }
+      a {
+        position: absolute;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10%;
+        display: none;
+        text-decoration: none;
+      }
+      a * {
+        display: block;
+        color: white;
+      }
+      div.item:hover a {
+        display: flex;
+        background: rgba(0,0,0,0.4);
+        backdrop-filter: blur(4px);
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main">
+      <div class="grid">
+        <% albums.forEach(album => { %>
+          <div class="item">
+            <img 
+              src="<%= album.image %>" 
+              alt="<%= album.name %>" 
+              draggable="false"
+              data-name="<%= album.name %>" 
+              data-artist="<%= album.artist %>"
+              data-date="<%= album.release_date %>"
+            />
+            <a draggable="false" href="spotify:album:<%= album.id %>">
+              <span><%= album.name %></span>
+              <span><%= album.artist %></span>
+              <time><%= album.release_date.slice(0,4) %></time>
+            </a>
+          </div>
+        <% }) %>
+        </div>
+    </main>
+  </body>
+</html>

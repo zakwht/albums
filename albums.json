@@ -119,6 +119,13 @@
     "release_date": "2016-11-25"
   },
   {
+    "name": "Loud",
+    "image": "https://i.scdn.co/image/ab67616d0000b273aa16162c83c19d587a3bfa45",
+    "artist": "Rihanna",
+    "id": "6UHhmTLl9T1scRYLmpHcDX",
+    "release_date": "2010-11-16"
+  },
+  {
     "name": "DAMN.",
     "image": "https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699",
     "artist": "Kendrick Lamar",
@@ -315,6 +322,13 @@
     "release_date": "2015-04-13"
   },
   {
+    "name": "Golden Hour",
+    "image": "https://i.scdn.co/image/ab67616d0000b2732e35d25eb7288830d5540484",
+    "artist": "Kacey Musgraves",
+    "id": "7f6xPqyaolTiziKf5R5Z0c",
+    "release_date": "2018-03-30"
+  },
+  {
     "name": "Voulez-Vous",
     "image": "https://i.scdn.co/image/ab67616d0000b273aa22899360d8ba6704732dec",
     "artist": "ABBA",
@@ -483,6 +497,13 @@
     "release_date": "2018-08-17"
   },
   {
+    "name": "Graceland",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ecd1e6fe12d12402318d747d",
+    "artist": "Paul Simon",
+    "id": "4WoQ94qzwQj28n3nlSOVLB",
+    "release_date": "1986-08-25"
+  },
+  {
     "name": "1989",
     "image": "https://i.scdn.co/image/ab67616d0000b2739abdf14e6058bd3903686148",
     "artist": "Taylor Swift",
@@ -574,6 +595,13 @@
     "release_date": "2018-12-24"
   },
   {
+    "name": "E·mo·tion (Deluxe)",
+    "image": "https://i.scdn.co/image/ab67616d0000b273c77e4de195d9182d5f917825",
+    "artist": "Carly Rae Jepsen",
+    "id": "09qAJ8LMsiil5IixKRjYGJ",
+    "release_date": "2015-08-21"
+  },
+  {
     "name": "to hell with it",
     "image": "https://i.scdn.co/image/ab67616d0000b27312c2eefb1d28509c632d915d",
     "artist": "PinkPantheress",
@@ -593,33 +621,5 @@
     "artist": "Lorde",
     "id": "0rmhjUgoVa17LZuS8xWQ3v",
     "release_date": "2013-09-27"
-  },
-  {
-    "name": "E·mo·tion (Deluxe)",
-    "image": "https://i.scdn.co/image/ab67616d0000b273c77e4de195d9182d5f917825",
-    "artist": "Carly Rae Jepsen",
-    "id": "09qAJ8LMsiil5IixKRjYGJ",
-    "release_date": "2015-08-21"
-  },
-  {
-    "name": "Golden Hour",
-    "image": "https://i.scdn.co/image/ab67616d0000b2732e35d25eb7288830d5540484",
-    "artist": "Kacey Musgraves",
-    "id": "7f6xPqyaolTiziKf5R5Z0c",
-    "release_date": "2018-03-30"
-  },
-  {
-    "name": "Graceland",
-    "image": "https://i.scdn.co/image/ab67616d0000b273ecd1e6fe12d12402318d747d",
-    "artist": "Paul Simon",
-    "id": "4WoQ94qzwQj28n3nlSOVLB",
-    "release_date": "1986-08-25"
-  },
-  {
-    "name": "Loud",
-    "image": "https://i.scdn.co/image/ab67616d0000b273aa16162c83c19d587a3bfa45",
-    "artist": "Rihanna",
-    "id": "6UHhmTLl9T1scRYLmpHcDX",
-    "release_date": "2010-11-16"
   }
 ]
