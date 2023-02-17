@@ -1,6 +1,6 @@
 # Spotify Album Covers
 
-[![License](https://img.shields.io/github/license/zakwht/albums)](/LICENSE)
+[![License](https://img.shields.io/github/license/zakwht/albums)](/LICENSE.md)
 [![Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 Express app that retrieves a Spotify playlist and compiles the album covers from each track it contains. 
