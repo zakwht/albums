@@ -6,12 +6,18 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
 const decorator = (req) => {
-  if (process.env.NODE_ENV && process.env.NODE_ENV == "dev")
+  if (process.env.NODE_ENV && process.env.NODE_ENV == "dev") {
     console.log(
       req.route.path,
       req.query,
       app.get("token") ? "auth" : "no auth"
     );
+    if (app.get("albums"))
+      require("fs").writeFileSync(
+        "./albums.json",
+        JSON.stringify(app.get("albums"), null, 2)
+      );
+  }
 };
 
 const generateRandomString = () =>

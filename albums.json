@@ -7,6 +7,13 @@
     "release_date": "2005-11-11"
   },
   {
+    "name": "Apolonio",
+    "image": "https://i.scdn.co/image/ab67616d0000b2732b542e7e64eae37e4dea6fc1",
+    "artist": "Omar Apollo",
+    "id": "7HlxxaJOHK0ArY4Ae4Qfc7",
+    "release_date": "2020-10-16"
+  },
+  {
     "name": "SOUR",
     "image": "https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a",
     "artist": "Olivia Rodrigo",
@@ -168,6 +175,13 @@
     "release_date": "2009-01-01"
   },
   {
+    "name": "In Ha Mood",
+    "image": "https://i.scdn.co/image/ab67616d0000b273cf9b9ac12129c2d73a788caf",
+    "artist": "Ice Spice",
+    "id": "0CQzO0dUktGpymhtvrIXqW",
+    "release_date": "2023-01-06"
+  },
+  {
     "name": "American Boyfriend: A Suburban Love Story",
     "image": "https://i.scdn.co/image/ab67616d0000b273030b3a60e1041ebec36d2a73",
     "artist": "Kevin Abstract",
@@ -180,6 +194,13 @@
     "artist": "Frank Ocean",
     "id": "392p3shh2jkxUxY2VHvlH8",
     "release_date": "2012-07-10"
+  },
+  {
+    "name": "Red Moon In Venus",
+    "image": "https://i.scdn.co/image/ab67616d0000b27381fccd758776d16b87721b17",
+    "artist": "Kali Uchis",
+    "id": "5OZ44LaqZbpP3m9B3oT8br",
+    "release_date": "2023-03-03"
   },
   {
     "name": "Flower Boy",
@@ -231,18 +252,18 @@
     "release_date": "2021-04-09"
   },
   {
+    "name": "Taylor Swift",
+    "image": "https://i.scdn.co/image/ab67616d0000b2732f8c0fd72a80a93f8c53b96c",
+    "artist": "Taylor Swift",
+    "id": "7mzrIsaAjnXihW3InKjlC3",
+    "release_date": "2006-10-24"
+  },
+  {
     "name": "Puberty 2",
     "image": "https://i.scdn.co/image/ab67616d0000b27329eb9ad9b9af34bbb54eb053",
     "artist": "Mitski",
     "id": "4Coa8Eb9SzjrkwWEom963Q",
     "release_date": "2016-06-17"
-  },
-  {
-    "name": "Wolf",
-    "image": "https://i.scdn.co/image/ab67616d0000b2736be6806a01c452f360cab678",
-    "artist": "Tyler, The Creator",
-    "id": "40QTqOBBxCEIQlLNdSjFQB",
-    "release_date": "2013-04-01"
   },
   {
     "name": "WHO CARES?",
@@ -280,6 +301,13 @@
     "release_date": "1969-09-26"
   },
   {
+    "name": "the record",
+    "image": "https://i.scdn.co/image/ab67616d0000b27343fc02bcfa7cd4e6bb66aa22",
+    "artist": "boygenius",
+    "id": "0e9GjrztzBw8oMC6n2CDeI",
+    "release_date": "2023-03-31"
+  },
+  {
     "name": "Good Girl Gone Bad: Reloaded",
     "image": "https://i.scdn.co/image/ab67616d0000b273f9f27162ab1ed45b8d7a7e98",
     "artist": "Rihanna",
@@ -294,11 +322,25 @@
     "release_date": "1995"
   },
   {
+    "name": "Norman Fucking Rockwell!",
+    "image": "https://i.scdn.co/image/ab67616d0000b273879e9318cb9f4e05ee552ac9",
+    "artist": "Lana Del Rey",
+    "id": "5XpEKORZ4y6OrCZSKsi46A",
+    "release_date": "2019-08-30"
+  },
+  {
     "name": "Stranger in the Alps",
     "image": "https://i.scdn.co/image/ab67616d0000b27368b90c3b34c3ac22856ddab8",
     "artist": "Phoebe Bridgers",
     "id": "0qWcLfCZ8wtcoOdX14oGNI",
     "release_date": "2017-09-22"
+  },
+  {
+    "name": "Wolf",
+    "image": "https://i.scdn.co/image/ab67616d0000b27322007a4aa8a55fe7b1de5632",
+    "artist": "Tyler, The Creator",
+    "id": "40QTqOBBxCEIQlLNdSjFQB",
+    "release_date": "2013-04-01"
   },
   {
     "name": "Solar Power",
@@ -404,6 +446,13 @@
     "artist": "Kid Cudi",
     "id": "08eM9GRdr5BCCHNqS3Wwud",
     "release_date": "2010-11-09"
+  },
+  {
+    "name": "Preacher’s Daughter",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ccd1887cc78b0bd55f54bbe1",
+    "artist": "Ethel Cain",
+    "id": "3WmujGwOS0ANHkJRnMH6n8",
+    "release_date": "2022-05-12"
   },
   {
     "name": "Blue Banisters",
@@ -581,6 +630,13 @@
     "release_date": "2019-03-22"
   },
   {
+    "name": "Did you know that there's a tunnel under Ocean Blvd",
+    "image": "https://i.scdn.co/image/ab67616d0000b27359ae8cf65d498afdd5585634",
+    "artist": "Lana Del Rey",
+    "id": "5HOHne1wzItQlIYmLXLYfZ",
+    "release_date": "2023-03-24"
+  },
+  {
     "name": "21",
     "image": "https://i.scdn.co/image/ab67616d0000b273164feb363334f93b6458d2a9",
     "artist": "Adele",
@@ -600,6 +656,27 @@
     "artist": "Carly Rae Jepsen",
     "id": "09qAJ8LMsiil5IixKRjYGJ",
     "release_date": "2015-08-21"
+  },
+  {
+    "name": "An Innocent Man",
+    "image": "https://i.scdn.co/image/ab67616d0000b273814cbc4746358a25c84c62e7",
+    "artist": "Billy Joel",
+    "id": "3R3x4zIabsvpD3yxqLaUpc",
+    "release_date": "1983-08-08"
+  },
+  {
+    "name": "Broke with Expensive Taste",
+    "image": "https://i.scdn.co/image/ab67616d0000b273b5efe29cb31508624b9f59d5",
+    "artist": "Azealia Banks",
+    "id": "6ptPMZzScoFqSVfzph6m9B",
+    "release_date": "2014-11-07"
+  },
+  {
+    "name": "The 1975",
+    "image": "https://i.scdn.co/image/ab67616d0000b2734d32eb25811626546abb3f1c",
+    "artist": "The 1975",
+    "id": "33ZqJmmqFE8Z7Ak1Lxbnfb",
+    "release_date": "2013-01-01"
   },
   {
     "name": "to hell with it",
