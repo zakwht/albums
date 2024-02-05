@@ -1,5 +1,5 @@
 const express = require("express");
-const { client_id, secret, scope } = require("./.env.json");
+const { client_id, secret, scope, P1, P2 } = require("./.env.json");
 
 const app = express();
 app.set("view engine", "ejs");
@@ -12,10 +12,10 @@ const decorator = (req) => {
       req.query,
       app.get("token") ? "auth" : "no auth"
     );
-    if (app.get("albums"))
+    if (app.get("tracks"))
       require("fs").writeFileSync(
         "./albums.json",
-        JSON.stringify(app.get("albums"), null, 2)
+        JSON.stringify(app.get("tracks"), null, 2)
       );
   }
 };
@@ -29,60 +29,19 @@ const generateRandomString = () =>
 app.get("/albums", (req, res) => {
   decorator(req);
 
-  if (!app.get("albums")) return res.redirect("/");
-  res.render("albums.ejs", { albums: app.get("albums") });
+  if (!app.get("tracks")) return res.redirect("/");
+  res.render("albums.ejs", {
+    tracks: app.get("tracks"),
+    albums: app.get("albums")
+  });
 });
 
-app.get("/get-playlists", async (req, res) => {
-  decorator(req);
-
+const get_tracks = async (playlist_id, offset) => {
   const access_token = app.get("token");
-  const { offset, match, redirect } = {
-    match: "albums",
-    redirect: true,
-    ...req.query
-  };
-  if (!access_token) return res.redirect("/");
-
-  const playlists = await fetch(
-    `https://api.spotify.com/v1/me/playlists?limit=50&offset=${offset || 0}`,
-    {
-      headers: {
-        Authorization: `Bearer ${access_token}`,
-        "Content-Type": "application/json"
-      }
-    }
-  ).then((r) => r.json());
-
-  const playlist = playlists.items.filter((pl) => pl.name == match);
-
-  if (!playlist.length) {
-    if (playlists.offset + 50 > playlists.total)
-      return res.redirect("/?error=that playlist does not exist");
-    return res.redirect(
-      `get-playlists?offset=${
-        playlists.offset + 50
-      }&match=${match}&redirect=${redirect}`
-    );
-  }
-
-  res.redirect(
-    `/get-albums?playlist_id=${playlist[0].id}&redirect=${redirect}`
-  );
-});
-
-app.get("/get-albums", async (req, res) => {
-  decorator(req);
-
-  const access_token = app.get("token");
-  const { playlist_id, redirect } = req.query;
-
-  if (!access_token) return res.redirect("/");
-  if (!playlist_id || playlist_id == "undefined")
-    return res.redirect(`/get-playlists?access_token=${access_token}`);
-
   const playlist = await fetch(
-    `https://api.spotify.com/v1/playlists/${playlist_id}`,
+    `https://api.spotify.com/v1/playlists/${playlist_id}/tracks?offset=${
+      offset || 0
+    }`,
     {
       headers: {
         Authorization: `Bearer ${access_token}`,
@@ -91,20 +50,21 @@ app.get("/get-albums", async (req, res) => {
     }
   ).then((r) => r.json());
 
-  const albums = playlist.tracks.items.map(({ track: { album } }) => ({
-    name: album.name,
-    image: album.images[0].url,
-    artist: album.artists[0].name,
-    id: album.id,
-    release_date: album.release_date
+  const tracks = playlist.items.map((i) => ({
+    added_at: i.added_at,
+    added_by: i.added_by.id,
+    name: i.track.name,
+    id: i.track.id,
+    artists: i.track.artists.map((a) => a.name),
+    image: i.track.album.images[0].url
   }));
 
-  app.set("albums", albums);
-  if (!redirect || redirect == "true") return res.redirect("/albums");
-  res.json(albums);
-});
+  if (playlist.next)
+    return tracks.concat(...(await get_tracks(playlist_id, offset + 100)));
+  return tracks;
+};
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   decorator(req);
 
   const access_token = app.get("token");
@@ -120,11 +80,18 @@ app.get("/", (req, res) => {
         }).toString()
     );
 
-  const { match } = req.query;
-  if (!match) return res.render("index.ejs", { error: req.query.error });
-  return res.redirect(`/get-playlists?match=${match}`);
+  let p1 = await get_tracks(P1, 0);
+  let p2 = await get_tracks(P2, 0);
+
+  let tracks = p1
+    .concat(p2)
+    .sort((a, b) => a.added_at.localeCompare(b.added_at));
+
+  app.set("tracks", tracks);
+  return res.redirect("albums");
 });
 
+// callback endpoint from spotify auth
 app.get("/callback", (req, res) => {
   decorator(req);
 
